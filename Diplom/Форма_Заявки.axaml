@@ -1,0 +1,47 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Diplom.Форма_Заявки"
+         Title="Заказы" Width="950" Height="500">
+   <Grid>
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin = "10 10 0 0" FontSize = "20" FontWeight="Bold">Заказы</TextBlock>
+            <TextBlock Margin = "159 10 0 0" FontSize = "20" FontWeight="Bold">Сортировка</TextBlock>
+            <TextBlock Margin = "50 10 0 0" FontSize = "20" FontWeight="Bold">Товар</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center" Margin = "10 10 0 0"> Поиск по Имени клиента: </TextBlock>
+            <TextBox Name="ServSearch" Width="150" Margin ="5 10 0 0" TextChanged="SearchService"></TextBox>
+            <StackPanel Margin="10 12 00 0">
+                <Button Background= "Orange"  Content="Максимум стоимости" Click="SortDescending" Width="170"></Button>
+            </StackPanel>
+            <StackPanel Margin="10 12 00 0">
+                <Button Background= "Orange" Name="DeleteButton" Content="-" Click="DeleteData"></Button>
+            </StackPanel>
+            <StackPanel  Margin=" 10 12 0 0">
+                <Button Background= "Orange" Name="back" Content="Вернутся" Click="Main"></Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="10 12 00 0">
+                <Button Background= "Orange"  Content="Минимум стоимости" Click="SortAscending" Width="170" ></Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <DataGrid Name="DataGridD" x:CompileBindings="False" Margin ="10 20 0 0" Height="350" IsReadOnly="True" ItemsSource="{Binding Items}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Товар" Binding="{Binding Ассортимент_id}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding Клиент_id}"></DataGridTextColumn>
+                  
+                    <DataGridTextColumn Header="Услуга" Binding="{Binding Услуга_id}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Цена}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+            </StackPanel>
+    </Grid>
+</Window>

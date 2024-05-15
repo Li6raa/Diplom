@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Diplom/App.axaml" value="Diplom/Diplom.csproj" />
+        <entry key="Diplom/MainWindow.axaml" value="Diplom/Diplom.csproj" />
+        <entry key="Diplom/Ассортимент.axaml" value="Diplom/Diplom.csproj" />
+        <entry key="Diplom/Главное_меню.axaml" value="Diplom/Diplom.csproj" />
+        <entry key="Diplom/Форма_Ассортимент.axaml" value="Diplom/Diplom.csproj" />
+        <entry key="Diplom/Форма_Заявки.axaml" value="Diplom/Diplom.csproj" />
+        <entry key="Diplom/Форма_добавления.axaml" value="Diplom/Diplom.csproj" />
+        <entry key="Diplom/Форма_редактирования.axaml" value="Diplom/Diplom.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

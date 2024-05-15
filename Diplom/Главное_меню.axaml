@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Diplom.Главное_меню"
+        Title="Главное меню" Width="200" Height="250">
+        <Grid>
+            <StackPanel Orientation="Vertical">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock VerticalAlignment="Center"></TextBlock>
+                         <Button Background= "Orange" Content="Заявки" Click="OpenWindow" Width="120" Height="30" Margin="-10 70 0 10"/>
+                        <Button Background= "Orange" Content="Товары" Click="OpenNewWindow" Width="120" Height="30" Margin="-10 0 0 10"/>
+                    <Button Background= "Orange" Content="Выход" Click="exit" Width="100" Height="30" Margin="0 0 0 10" />
+                </StackPanel>
+            </StackPanel>
+         </Grid>
+</Window>

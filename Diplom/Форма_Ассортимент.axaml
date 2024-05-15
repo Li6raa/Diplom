@@ -1,0 +1,66 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Diplom.Форма_Ассортимент"
+       Title="Ассортимент товаров" Width="950" Height="500">
+   <Grid>
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Margin = "10 10 0 0" FontSize = "20" FontWeight="Bold">Ассортимент товаров</TextBlock>
+            <TextBlock Margin = "159 10 0 0" FontSize = "20" FontWeight="Bold">Сортировка</TextBlock>
+            <TextBlock Margin = "50 10 0 0" FontSize = "20" FontWeight="Bold">Товар</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center" Margin = "10 10 0 0"> Поиск по названию товара: </TextBlock>
+            <TextBox Name="ServSearch" Width="150" Margin ="5 10 0 0" TextChanged="SearchService"></TextBox>
+            <StackPanel Margin="10 12 00 0">
+                <Button Background= "Orange"  Content="Максимум стоимости" Click="SortDescending" Width="170"></Button>
+            </StackPanel>
+            <StackPanel Margin="10 12 00 0">
+                <Button Background= "Orange" Name="AddButton" Content="+" Click="AddData"></Button>
+            </StackPanel>
+            <StackPanel Margin="10 12 00 0">
+                <Button Background= "Orange" Name="DeleteButton" Content="-" Click="DeleteData"></Button>
+            </StackPanel>
+            <StackPanel  Margin=" 10 12 0 0">
+                <Button Background= "Orange" Name="back" Content="Вернутся" Click="Main"></Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center"
+                       x:Name="FilterDiscont" Margin ="10 10 0 0">Фильтрация по категории: </TextBlock>
+            <ComboBox Name="CategoryComboBox" 
+                      x:CompileBindings="False"
+                      SelectionChanged="Cmdstatus_OnSelectionChanged" Width="150" Margin ="10 10 0 0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Название}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <StackPanel Margin="10 12 00 0">
+                <Button Background= "Orange"  Content="Минимум стоимости" Click="SortAscending" Width="170" ></Button>
+            </StackPanel>
+            <StackPanel Margin="10 12 00 0">
+                <Button Background= "Orange"  Name="EditButton" Content="Изменить" Click="Edit"></Button>
+            </StackPanel>
+            <StackPanel Margin="10 12 00 0">
+                <Button Background= "Orange"  Name="Updatee" Content="Cбросить фильтр" Click="Update"></Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical">
+            <DataGrid Name="DataGrid" x:CompileBindings="False" Margin ="10 20 0 0" Height="350" IsReadOnly="True" ItemsSource="{Binding Items}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Название}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Категория" Binding="{Binding Категория_id}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Цена}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Количество" Binding="{Binding Количество}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+            </StackPanel>
+    </Grid>
+</Window>
