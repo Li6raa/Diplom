@@ -11,42 +11,42 @@ namespace Diplom;
 
 public partial class Форма_редактирования : Window
 {
-    private List<Ассортимент> _Ассортиментs;
-    private Ассортимент CurrentServ;
+    private List<Товар> _Ассортиментs;
+    private Товар CurrentServ;
     private MySqlConnection conn;
     private string _connString="server=localhost; database=pp; port=3306;User Id=root;password=root";
-    public Форма_редактирования(Ассортимент currentServ, List<Ассортимент> _ассортиментs)
+    public Форма_редактирования(Товар currentServ, List<Товар> _ассортиментs)
     {
         InitializeComponent();
         CurrentServ = currentServ;
         this.DataContext = currentServ;
         _Ассортиментs = _ассортиментs;
     }
-    private void EditProduct(object sender, RoutedEventArgs e)
-    {
-        var usr = _Ассортиментs.FirstOrDefault(x => x.ID == CurrentServ.ID);
-        if (usr != null)
+        private void EditProduct(object sender, RoutedEventArgs e)
         {
-            try
+            var usr = _Ассортиментs.FirstOrDefault(x => x.ID == CurrentServ.ID);
+            if (usr != null)
             {
-                conn = new MySqlConnection(_connString);
-                conn.Open();
-                string upd = "UPDATE ассортимент SET Название = '" + Name.Text +
-                             "', Категория_id = '" + Convert.ToInt32(Category.Text) + "', Цена = '" +
-                             Convert.ToInt32(Price.Text) +"', Количество = '" +Convert.ToInt32(Quantity.Text)+ "'  WHERE ID = " + Convert.ToInt32(ID.Text) + ";";
-                MySqlCommand cmd = new MySqlCommand(upd, conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                Форма_Ассортимент back = new Форма_Ассортимент();
-                back.Show();
-                this.Close();
-            }
-            catch (Exception exception)
-            {
-                Console.Write("Error" + exception);
+                try
+                {
+                    conn = new MySqlConnection(_connString);
+                    conn.Open();
+                    string upd = "UPDATE товар SET Название = '" + Name.Text +
+                                 "', Категория_id = '" + Convert.ToInt32(Category.Text) + "', Цена = '" +
+                                 Convert.ToInt32(Price.Text) +"', Количество = '" +Convert.ToInt32(Quantity.Text)+ "'  WHERE ID = " + Convert.ToInt32(ID.Text) + ";";
+                    MySqlCommand cmd = new MySqlCommand(upd, conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    Форма_Ассортимент back = new Форма_Ассортимент();
+                    back.Show();
+                    this.Close();
+                }
+                catch (Exception exception)
+                {
+                    Console.Write("Error" + exception);
+                }
             }
         }
-    }
     
     
     private void GoBack(object? sender, RoutedEventArgs e)

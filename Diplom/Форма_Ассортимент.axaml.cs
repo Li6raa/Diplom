@@ -11,7 +11,7 @@ namespace Diplom;
 
 public partial class Форма_Ассортимент : Window
 {
-    private List<Ассортимент> _ассортиментs;
+    private List<Товар> _ассортиментs;
     private List<Категория> _категорияs;
     private string _connString="server=localhost; database=pp; port=3306;User Id=root;password=root";
     private MySqlConnection conn;
@@ -25,17 +25,17 @@ public partial class Форма_Ассортимент : Window
     public void ShowProductTable()
     {
         string sql =
-            "SELECT ассортимент.ID, ассортимент.Название, категория.Название, Цена, Количество FROM ассортимент " +
-            "join категория ON ассортимент.Категория_id = категория.ID;";
+            "SELECT товар.ID, товар.Название, категория.Название, Цена, Количество FROM товар " +
+            "join категория ON товар.Категория_id = категория.ID;";
             
-        _ассортиментs = new List<Ассортимент>();
+        _ассортиментs = new List<Товар>();
         conn = new MySqlConnection(_connString);
         conn.Open();
         MySqlCommand command = new MySqlCommand(sql, conn);
         MySqlDataReader reader = command.ExecuteReader();
         while (reader.Read() && reader.HasRows)
         {
-            var currentYch = new Ассортимент()
+            var currentYch = new Товар()
             {
                 ID = reader.GetInt32("ID"),
                 Название = reader.GetValue(1).ToString(),
@@ -85,12 +85,12 @@ public partial class Форма_Ассортимент : Window
     }
     private void SortAscending(object? sender, RoutedEventArgs e)
     {
-        var sortedItems = DataGrid.ItemsSource.Cast<Ассортимент>().OrderBy(s => s.Цена).ToList();
+        var sortedItems = DataGrid.ItemsSource.Cast<Товар>().OrderBy(s => s.Цена).ToList();
         DataGrid.ItemsSource = sortedItems;
     }
     private void SortDescending(object? sender, RoutedEventArgs e)
     {
-        var sortedItems = DataGrid.ItemsSource.Cast<Ассортимент>().OrderByDescending(s => s.Цена).ToList();
+        var sortedItems = DataGrid.ItemsSource.Cast<Товар>().OrderByDescending(s => s.Цена).ToList();
         DataGrid.ItemsSource = sortedItems;
     }
 
@@ -106,7 +106,7 @@ public partial class Форма_Ассортимент : Window
     }
     private void Edit(object? sender, RoutedEventArgs e)
     {
-        Ассортимент currentServ = DataGrid.SelectedItem as Ассортимент;
+        Товар currentServ = DataGrid.SelectedItem as Товар;
         if (currentServ == null)
             return;
         Форма_редактирования edit = new Форма_редактирования(currentServ, _ассортиментs);
@@ -118,14 +118,14 @@ public partial class Форма_Ассортимент : Window
     {
         try
         {
-            Ассортимент asr = DataGrid.SelectedItem as Ассортимент;
+            Товар asr = DataGrid.SelectedItem as Товар;
             if (asr == null)
             {
                 return;
             }
             conn = new MySqlConnection(_connString);
             conn.Open();
-            string sql = "DELETE FROM ассортимент WHERE ID = " + asr.ID;
+            string sql = "DELETE FROM товар WHERE ID = " + asr.ID;
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.ExecuteNonQuery();
             conn.Close();

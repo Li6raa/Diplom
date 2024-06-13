@@ -1,6 +1,6 @@
 ﻿namespace Diplom;
 
-public class Ассортимент
+public class Товар
 {
     public int ID { get; set; }
     public string Название { get; set; }

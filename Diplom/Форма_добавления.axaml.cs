@@ -20,7 +20,7 @@ public partial class Форма_добавления : Window
         string категория = Category.Text;
         string цена = Price.Text;
         string количество = Quantity.Text;
-        string sql = "INSERT INTO ассортимент (Название, Категория_id, Цена, Количество) VALUES (@Название, @Категория_id, @Цена, @Количество)";
+        string sql = "INSERT INTO товар (Название, Категория_id, Цена, Количество) VALUES (@Название, @Категория_id, @Цена, @Количество)";
 
         conn = new MySqlConnection(_connString);
         conn.Open();

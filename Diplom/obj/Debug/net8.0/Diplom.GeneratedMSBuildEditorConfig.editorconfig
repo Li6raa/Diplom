@@ -13,24 +13,24 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Diplom
-build_property.ProjectDir = C:\Users\mrble\OneDrive\Рабочий стол\ПП_ОТЫРГАШЕВА\Diplom\Diplom\
+build_property.ProjectDir = C:\Users\mrble\OneDrive\Рабочий стол\полит\ПП_ОТЫРГАШЕВА\Diplom\Diplom\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/mrble/OneDrive/Рабочий стол/ПП_ОТЫРГАШЕВА/Diplom/Diplom/App.axaml]
+[C:/Users/mrble/OneDrive/Рабочий стол/полит/ПП_ОТЫРГАШЕВА/Diplom/Diplom/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/mrble/OneDrive/Рабочий стол/ПП_ОТЫРГАШЕВА/Diplom/Diplom/Главное_меню.axaml]
+[C:/Users/mrble/OneDrive/Рабочий стол/полит/ПП_ОТЫРГАШЕВА/Diplom/Diplom/Главное_меню.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/mrble/OneDrive/Рабочий стол/ПП_ОТЫРГАШЕВА/Diplom/Diplom/Форма_Ассортимент.axaml]
+[C:/Users/mrble/OneDrive/Рабочий стол/полит/ПП_ОТЫРГАШЕВА/Diplom/Diplom/Форма_Ассортимент.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/mrble/OneDrive/Рабочий стол/ПП_ОТЫРГАШЕВА/Diplom/Diplom/Форма_добавления.axaml]
+[C:/Users/mrble/OneDrive/Рабочий стол/полит/ПП_ОТЫРГАШЕВА/Diplom/Diplom/Форма_добавления.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/mrble/OneDrive/Рабочий стол/ПП_ОТЫРГАШЕВА/Diplom/Diplom/Форма_Заявки.axaml]
+[C:/Users/mrble/OneDrive/Рабочий стол/полит/ПП_ОТЫРГАШЕВА/Diplom/Diplom/Форма_Заявки.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/mrble/OneDrive/Рабочий стол/ПП_ОТЫРГАШЕВА/Diplom/Diplom/Форма_редактирования.axaml]
+[C:/Users/mrble/OneDrive/Рабочий стол/полит/ПП_ОТЫРГАШЕВА/Diplom/Diplom/Форма_редактирования.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

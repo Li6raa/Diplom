@@ -16,6 +16,9 @@
         <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10"/>
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.10"/>
+        <PackageReference Include="ClosedXML" Version="0.104.0-preview2" />
+        <PackageReference Include="EPPlus" Version="7.1.2" />
         <PackageReference Include="MySql.Data" Version="8.4.0" />
+        <PackageReference Include="OfficeOpenXml.Core.ExcelPackage" Version="1.0.0" />
     </ItemGroup>
 </Project>

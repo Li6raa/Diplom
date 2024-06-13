@@ -9,11 +9,11 @@
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Horizontal">
             <TextBlock Margin = "10 10 0 0" FontSize = "20" FontWeight="Bold">Заказы</TextBlock>
-            <TextBlock Margin = "159 10 0 0" FontSize = "20" FontWeight="Bold">Сортировка</TextBlock>
-            <TextBlock Margin = "50 10 0 0" FontSize = "20" FontWeight="Bold">Товар</TextBlock>
+            <TextBlock Margin = "270 10 0 0" FontSize = "20" FontWeight="Bold">Сортировка</TextBlock>
+            <TextBlock Margin = "60 10 0 0" FontSize = "20" FontWeight="Bold">Товар</TextBlock>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <TextBlock VerticalAlignment="Center" Margin = "10 10 0 0"> Поиск по Имени клиента: </TextBlock>
+            <TextBlock VerticalAlignment="Center" Margin = "10 10 60 0"> Поиск по Клиенту: </TextBlock>
             <TextBox Name="ServSearch" Width="150" Margin ="5 10 0 0" TextChanged="SearchService"></TextBox>
             <StackPanel Margin="10 12 00 0">
                 <Button Background= "Orange"  Content="Максимум стоимости" Click="SortDescending" Width="170"></Button>
@@ -22,23 +22,40 @@
                 <Button Background= "Orange" Name="DeleteButton" Content="-" Click="DeleteData"></Button>
             </StackPanel>
             <StackPanel  Margin=" 10 12 0 0">
-                <Button Background= "Orange" Name="back" Content="Вернутся" Click="Main"></Button>
+                <Button Background= "Orange" Name="backButton" Content="Вернутся" Click="back"></Button>
+            </StackPanel>
+            <StackPanel  Margin=" 10 12 0 0">
+                <Button Background= "Orange" Name="SAVEButton" Content="Отчет" Click="SAVE"></Button>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
+            <TextBlock VerticalAlignment="Center"
+                       x:Name="FilterDiscont" Margin ="10 10 20 0">Фильтрация по статусу: </TextBlock>
+            <ComboBox Name="CategoryComboBox" 
+                      x:CompileBindings="False"
+                      SelectionChanged="Cmdstatus_OnSelectionChanged" Width="150" Margin ="10 10 0 0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Название}"></TextBlock>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
             <StackPanel Margin="10 12 00 0">
                 <Button Background= "Orange"  Content="Минимум стоимости" Click="SortAscending" Width="170" ></Button>
+            </StackPanel>
+            <StackPanel Margin="1 12 00 0">
+                <Button Background= "Orange"  Name="Updatee" Content="Cбросить фильтр" Click="Update"></Button>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Vertical">
             <DataGrid Name="DataGridD" x:CompileBindings="False" Margin ="10 20 0 0" Height="350" IsReadOnly="True" ItemsSource="{Binding Items}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID" Binding="{Binding ID}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Товар" Binding="{Binding Ассортимент_id}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Имя" Binding="{Binding Клиент_id}"></DataGridTextColumn>
-                  
+                    <DataGridTextColumn Header="Товар" Binding="{Binding Товар_id}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Имя Клиента" Binding="{Binding Клиент_id}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Имя Сотрудника" Binding="{Binding Сотрудник_id}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Услуга" Binding="{Binding Услуга_id}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Цена" Binding="{Binding Цена}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Статус_id}"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mrble\\OneDrive\\Рабочий стол\\ПП_ОТЫРГАШЕВА\\Diplom\\Diplom\\Diplom.csproj": {}
+    "C:\\Users\\mrble\\OneDrive\\Рабочий стол\\полит\\ПП_ОТЫРГАШЕВА\\Diplom\\Diplom\\Diplom.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mrble\\OneDrive\\Рабочий стол\\ПП_ОТЫРГАШЕВА\\Diplom\\Diplom\\Diplom.csproj": {
+    "C:\\Users\\mrble\\OneDrive\\Рабочий стол\\полит\\ПП_ОТЫРГАШЕВА\\Diplom\\Diplom\\Diplom.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mrble\\OneDrive\\Рабочий стол\\ПП_ОТЫРГАШЕВА\\Diplom\\Diplom\\Diplom.csproj",
+        "projectUniqueName": "C:\\Users\\mrble\\OneDrive\\Рабочий стол\\полит\\ПП_ОТЫРГАШЕВА\\Diplom\\Diplom\\Diplom.csproj",
         "projectName": "Diplom",
-        "projectPath": "C:\\Users\\mrble\\OneDrive\\Рабочий стол\\ПП_ОТЫРГАШЕВА\\Diplom\\Diplom\\Diplom.csproj",
+        "projectPath": "C:\\Users\\mrble\\OneDrive\\Рабочий стол\\полит\\ПП_ОТЫРГАШЕВА\\Diplom\\Diplom\\Diplom.csproj",
         "packagesPath": "C:\\Users\\mrble\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mrble\\OneDrive\\Рабочий стол\\ПП_ОТЫРГАШЕВА\\Diplom\\Diplom\\obj\\",
+        "outputPath": "C:\\Users\\mrble\\OneDrive\\Рабочий стол\\полит\\ПП_ОТЫРГАШЕВА\\Diplom\\Diplom\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mrble\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,9 +64,21 @@
               "target": "Package",
               "version": "[11.0.10, )"
             },
+            "ClosedXML": {
+              "target": "Package",
+              "version": "[0.104.0-preview2, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.4.0, )"
+            },
+            "OfficeOpenXml.Core.ExcelPackage": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [
